@@ -1,6 +1,6 @@
 
 // script.js
-import { addPlayer, displayPlayers } from './player.js';
+import { addPlayer, displayPlayers } from './players.js';
 import { startMatch, displayMatches } from './match.js';
 
 window.addPlayer = addPlayer;
