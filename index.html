@@ -4,19 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>CricHeroes Clone</title>
+  <title>Home - CricHeroes Clone</title>
 </head>
 <body>
   <header>
     <h1>Welcome to CricHeroes Clone</h1>
     <nav>
-      <a href="home.html">Start a Match</a>
-      <a href="players.html">Manage Players</a>
-      <a href="matches.html">View Matches</a>
+      <a href="home.html">Home</a>
+      <a href="players.html">Players</a>
+      <a href="matches.html">Matches</a>
     </nav>
   </header>
-  <section>
-    <p>Start your own cricket matches, add players, and view match history.</p>
+
+  <section id="home">
+    <h2>Start Your Match</h2>
+    <button onclick="startMatch()">Start Match</button>
   </section>
+
+  <!-- Load the script using type="module" for ES6 support -->
+  <script src="script.js" type="module"></script>
 </body>
 </html>

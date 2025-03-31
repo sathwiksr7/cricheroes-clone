@@ -4,21 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>View Matches</title>
+  <title>Matches - CricHeroes Clone</title>
 </head>
-<body>
+<body id="matchesPage">
   <header>
+    <h1>Matches Management</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="home.html">Start a Match</a>
-      <a href="players.html">Manage Players</a>
+      <a href="players.html">Players</a>
+      <a href="matches.html">Matches</a>
     </nav>
   </header>
+
   <section>
-    <h2>Match History</h2>
-    <div id="matchContainer"></div>
+    <h2>Start a New Match</h2>
+    <button onclick="startMatch()">Start Match</button>
+
+    <h3>Match History</h3>
+    <ul id="matchesList"></ul>
   </section>
-  <script src="utils.js"></script>
-  <script src="match.js"></script>
+
+  <!-- Import scripts using modules -->
+  <script src="script.js" type="module"></script>
 </body>
 </html>
