@@ -1,0 +1,29 @@
+// script.js
+import { startMatch, updateMatchList } from './match.js';
+import { addPlayer } from './player.js';
+
+// Navigation
+const sections = document.querySelectorAll('section');
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    sections.forEach(sec => sec.style.display = 'none');
+    const targetSection = document.querySelector(link.getAttribute('href'));
+    if (targetSection) targetSection.style.display = 'block';
+  });
+});
+
+// Handle Player Form
+document.getElementById('playerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const playerName = document.getElementById('playerName').value;
+  if (playerName.trim()) {
+    addPlayer(playerName);
+    document.getElementById('playerName').value = '';
+  } else {
+    alert('Please enter a valid player name.');
+  }
+});
+
+// Update Match List if any match is started
+updateMatchList();

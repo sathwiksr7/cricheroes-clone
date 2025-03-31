@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Manage Players</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="home.html">Start a Match</a>
+      <a href="matches.html">View Matches</a>
+    </nav>
+  </header>
+  <section>
+    <h2>Add Players</h2>
+    <input type="text" id="playerName" placeholder="Enter player name" />
+    <button onclick="addPlayer()">Add Player</button>
+
+    <h3>Player List</h3>
+    <ul id="playerList"></ul>
+  </section>
+  <script src="utils.js"></script>
+  <script src="player.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+// Add a new player
+function addPlayer() {
+  const playerName = document.getElementById("playerName").value.trim();
+  if (playerName === "") {
+    alert("Please enter a player name.");
+    return;
+  }
+
+  let players = getData("players");
+
+  if (players.some(player => player.name === playerName)) {
+    alert("Player already exists.");
+    return;
+  }
+
+  players.push({ name: playerName });
+  saveData("players", players);
+
+  document.getElementById("playerName").value = "";
+  displayPlayers();
+}
+
+// Display players
+function displayPlayers() {
+  const players = getData("players");
+  const playerList = document.getElementById("playerList");
+  playerList.innerHTML = "";
+
+  if (players.length === 0) {
+    playerList.innerHTML = "<li>No players added yet.</li>";
+    return;
+  }
+
+  players.forEach((player, index) => {
+    const li = document.createElement("li");
+    li.textContent = player.name;
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.onclick = () => removePlayer(index);
+    li.appendChild(removeBtn);
+    playerList.appendChild(li);
+  });
+}
+
+// Remove a player
+function removePlayer(index) {
+  let players = getData("players");
+  players.splice(index, 1);
+  saveData("players", players);
+  displayPlayers();
+}
+
+window.onload = displayPlayers;
