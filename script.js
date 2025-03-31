@@ -1,18 +1,14 @@
-// Importing from other modules if they exist
-import { addPlayer, displayPlayers } from './players.js';
+
+// script.js
+import { addPlayer, displayPlayers } from './player.js';
 import { startMatch, displayMatches } from './match.js';
 
-// Ensure functions are accessible globally for onclick events in HTML
 window.addPlayer = addPlayer;
 window.displayPlayers = displayPlayers;
 window.startMatch = startMatch;
 window.displayMatches = displayMatches;
 
-// Initialize data on page load
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.body.id === 'playersPage') {
-    displayPlayers();
-  } else if (document.body.id === 'matchesPage') {
-    displayMatches();
-  }
+    if (document.getElementById('playersList')) displayPlayers();
+    if (document.getElementById('matchesList')) displayMatches();
 });
